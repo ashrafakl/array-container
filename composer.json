@@ -1,0 +1,20 @@
+{
+  "name": "ashrafakl/array-container",
+  "description": "PHP array class same as javascript array class",
+  "minimum-stability": "stable",
+  "license": "mit",
+  "authors": [
+    {
+      "name": "Ashraf Akl",
+      "email": "ashrafakl@yahoo.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "ashrafakl\\tools\\arrays\\": "src/"
+    }
+  }
+}

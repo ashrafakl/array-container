@@ -22,6 +22,7 @@ class ArrayContainer implements ArrayAccess
     }
 
     /**
+     * Tested
      * Applies the callback to the elements of the [[list]] array
      * @param callable $callable function to run for each element in [[list]] array.
      * @return $this ArrayContainer object or array containing all the elements of [[list]]
@@ -34,20 +35,35 @@ class ArrayContainer implements ArrayAccess
     }
 
     /**
+     * Tested
      * Applies the callback to the elements of the [[list]] array
      * If the callback function returns true, the current value in [[list]] array is returned into the result array
      * Iterates over each value in the [[list]] array
      * @param callable $callable
+     * @param bool $reindex When true reindex the [[list]] array from zero.
      * @return $this ArrayContainer object or array containing all the elements of [[list]]
      * after applying the callback function for each element.
      */
-    public function filter(callable $callable): ArrayContainer
+    public function filter(callable $callable, bool $reindex = false): ArrayContainer
     {
         $this->list = array_filter($this->list, $callable);
+        if ($reindex) {
+            $this->list = $this->values();
+        }
         return $this;
     }
 
     /**
+     * Return all the values of [[list]] array
+     * @return mixed
+     */
+    public function values()
+    {
+        return array_values($this->list);
+    }
+
+    /**
+     * Tested
      * Pop the element off the end of [[list]] array
      * @return mixed
      */
@@ -57,6 +73,7 @@ class ArrayContainer implements ArrayAccess
     }
 
     /**
+     * Tested
      * Push elements onto the end of the [[list]] array
      * @param mixed ...$elements The pushed variables
      * @return  ArrayContainer object
@@ -73,6 +90,7 @@ class ArrayContainer implements ArrayAccess
     }
 
     /**
+     * Tested
      * Shift an element off the beginning of the [[list]] array
      * @return mixed
      */
@@ -82,6 +100,7 @@ class ArrayContainer implements ArrayAccess
     }
 
     /**
+     * Tested
      * Prepend one or more elements to the beginning of the [[list]] array
      * @param mixed ...$elements The values to prepend
      * @return  ArrayContainer object
@@ -129,6 +148,7 @@ class ArrayContainer implements ArrayAccess
     }
 
     /**
+     * Tested
      * Calculate the sum of values in the [[list]] array
      * @return int|float the resulting value.
      */
@@ -189,9 +209,23 @@ class ArrayContainer implements ArrayAccess
         return $this->printR(true);
     }
 
+    /**
+     * Clone the ArrayContainer object to a new object
+     * @return ArrayContainer
+     */
     public function clone(): ArrayContainer
     {
         return clone $this;
+    }
+
+    /**
+     * Tested
+     * Count the [[list]] array elements
+     * @return int
+     */
+    public function count(): int
+    {
+        return count($this->list);
     }
 
     /**
@@ -225,6 +259,7 @@ class ArrayContainer implements ArrayAccess
     }
 
     /**
+     * Tested
      * Get the [[list]] array
      * @return array
      */

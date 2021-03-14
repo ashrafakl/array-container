@@ -1,0 +1,14 @@
+# phpstorm project files
+.idea
+
+# Visual studio code settings
+.vscode
+.vscode/settings.json
+
+# netbeans project files
+nbproject
+
+# composer vendor dir
+/vendor
+
+composer.lock

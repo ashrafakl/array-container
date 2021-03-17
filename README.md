@@ -11,13 +11,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist ashrafakl/array-contanier "~1.0.0"
+php composer.phar require --prefer-dist ashrafakl/array-container "~1.0.0"
 ```
 
 or add
 
 ```
-"ashrafakl/array-contanier": "~1.0.0"
+"ashrafakl/array-container": "~1.0.0"
 ```
 
 to the required section of your `composer.json` file.

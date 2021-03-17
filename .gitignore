@@ -12,3 +12,5 @@ nbproject
 /vendor
 
 composer.lock
+
+.phpunit.result.cache
